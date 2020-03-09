@@ -1,0 +1,22 @@
+routes:
+  /:
+    data: page.home
+    template: home
+
+  /signup/: members/signup
+  /signin/: members/signin
+  /account/: members/account
+
+  /features/: features
+  /about/team/:
+    template: about
+    data: page.team
+
+collections:
+  /blog/:
+    permalink: /blog/{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
