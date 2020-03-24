@@ -7,17 +7,23 @@
   "database": {
     "client": "sqlite3",
     "connection": {
-      "filename": "/mnt/c/Users/ddsbrddn/Sites/theme1/content/data/ghost-local.db"
+		 "filename": "/mnt/c/Users/ddsbrddn/Sites/theme1/content/data/ghost-local.db"
     }
   },
   "mail": {
-    "transport": "Direct"
+	"transport": "SMTP",
+	"options": {
+		"service": "Mailgun",
+		"host": "smtp.mailgun.org",
+		"port": 587,
+		"auth": {
+			"user": "postmaster@mg.najella.com",
+			"pass": "cfc5f57960084e586b69326a4ce29f0a-ee13fadb-0ccf57fd"
+		}
+	}
   },
   "logging": {
-    "transports": [
-      "file",
-      "stdout"
-    ]
+    "transports": [ "file", "stdout" ]
   },
   "process": "local",
   "paths": {

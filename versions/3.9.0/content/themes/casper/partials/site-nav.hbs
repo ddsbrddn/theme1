@@ -1,6 +1,6 @@
 <nav class="site-nav">
-    <div class="site-nav-left">
-        <div class="site-nav-left-content">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
             {{#if @site.logo}}
                 <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
             {{else}}
@@ -18,29 +18,29 @@
     </div>
     <div class="site-nav-right">
         {{#if @member}}
-            <div class="account-menu">
-                <a href="javascript:" class="account-menu-avatar" id="account-menu" type="checkbox" name="menu">
+            <div class="static-avatar avatar-wrapper author-list-item">
+				<a href="javascript:" data-members-signout>Sign out</a>
+                <a href="javascript:" class="subscriber-avatar account-menu author-profile-image" id="account-menu" type="checkbox" name="menu">
                     {{> "icons/avatar"}}
                     {{#if @member.avatar_image}}
-                        <img src="{{@member.avatar_image}}" />
+                        <img src="{{@member.avatar_image}}" class="author-profile-image" />
                     {{/if}}
                 </a>
                 <ul class="account-menu-dropdown">
-                    <li class="account-info">
+                    <li class="basic-info">
                         <small>Signed in as</small>
                         <span class="account-email" title="{{@member.email}}">{{@member.email}}</span>
                     </li>
                     <li><a href="{{@site.url}}/account/">Account</a></li>
-                    <li><a href="#signout" data-members-signout>Log out</a></li>
+                    <li><a href="javascript:" data-members-signout>Log out</a></li>
                 </ul>
             </div>
         {{else}}
-            <a class="nav-post-title signin-link" href="{{@site.url}}/signin/">Log in</a>
-            <a class="nav-post-title button primary small header-cta" href="{{@site.url}}/signup/">Subscribe</a>
-        {{/if}}
+            <a href="javascript:" data-members-signin>Log in</a>
+            <a class="subscribe-button" href="{{@site.url}}/signup/">Subscribe</a>
+        {{/if}}	
 
-        {{#if @labs.members}}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
-        {{/if}}
+		
+
     </div>
 </nav>
